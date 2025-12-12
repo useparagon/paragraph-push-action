@@ -123,7 +123,7 @@ runs:
       run: |
         npx para install
         if [ "${{ inputs.skipTypeErrors }}" = "true" ]; then
-          echo "::info::Skipping type errors during para build"
+          echo "::notice::Skipping type errors during para build"
           npx para build --skip-type-errors
         else
           npx para build
