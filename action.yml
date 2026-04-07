@@ -73,9 +73,10 @@ runs:
         fi
 
     - name: Setup Node.js environment
-      uses: actions/setup-node@v4.0.1
+      uses: actions/setup-node@v5.0.0
       with:
-        node-version: v18.17.1
+        node-version: v20.20.2
+        package-manager-cache: false
 
     - name: Install para CLI globally
       shell: bash
