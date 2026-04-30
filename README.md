@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: push
-        uses: useparagon/paragraph-push@v1
+        uses: useparagon/paragraph-push-action@v1
         with:
           paragonKey: ${{ secrets.PARAGON_CLI_KEY }}
           paragonZeusUrl: ${{ secrets.ZEUS_URL }}
