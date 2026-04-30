@@ -17,8 +17,14 @@ inputs:
     default: "https://dashboard.useparagon.com"
   subfolder:
     type: string
+    description: 'Specify base path to Paragraph project, relative to the working directory.'
     required: false
     default: '.'
+  skipTypeErrors:
+    type: boolean
+    description: 'Skip type error checks when building the Paragraph project.'
+    required: false
+    default: false
 
 runs:
   using: 'composite'
@@ -117,7 +123,12 @@ runs:
       working-directory: ${{ inputs.subfolder }}
       run: |
         npx para install
-        npx para build
+        if [ "${{ inputs.skipTypeErrors }}" = "true" ]; then
+          echo "::notice::Skipping type errors during para build"
+          npx para build --skip-type-errors
+        else
+          npx para build
+        fi
 
     - name: Push to Paragon
       shell: bash

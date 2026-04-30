@@ -39,3 +39,9 @@ URL for Paragon Zeus.
 
 - `paragonDashboardUrl` (Optional)\
 URL for Paragon Dashboard.
+
+- `subfolder` (Optional)\
+Specify base path to Paragraph project, relative to the working directory
+
+- `skipTypeErrors` (Optional)\
+Skip type error checks when building the Paragraph project.
